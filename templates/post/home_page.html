@@ -1,0 +1,16 @@
+{% extends "post/base.html" %}
+
+
+
+{% block content %}
+
+
+    <ul>
+    {% for post in posts %}
+        <li><a href="{% url "post:detail" post.id %}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+
+
+
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+.li {
+  float: left;
+}
+
+.a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.a:hover {
+  background-color: #111;
+}
+</style>
+</head>
+<body>
+
+<ul class="ul">
+  <li class="li"><a class="active, a" href="#home">Home</a></li>
+  <li class="li"><a class="a" href="#news">Add new post</a></li>
+  <li class="li"><a class="a" href="{% url "account:register" %}">Register</a></li>
+
+  <li class="li"><a class="a" href="{% url "account:login" %}">Log in</a></li>
+    {% if user.is_authenticated %}
+    <li class="li"><a class="a" href="{% url "account:logout" %}">Log out</a></li>
+    {% endif %}
+    <li class="li"><a class="a" href="{% url "post:create" %}">ADD post</a></li>
+</ul>
+
+</body>
+</html>

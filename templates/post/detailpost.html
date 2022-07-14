@@ -1,0 +1,27 @@
+{% extends "post/base.html" %}
+
+
+
+{% block content %}
+
+    title : {{ post.title }}
+    <br>
+    description : {{ post.description }}
+    <br>
+
+    body : {{ post.body }}
+    <br>
+    author : {{ post.author }}
+    <br>
+
+    data_pub : {{post.pub_date}}
+    <br>
+    <br>
+    <a href="{% url "post:delete" post.id %}"> Delete</a>
+     <br>
+    <br>
+    <a href="{% url "post:update" post.id %}"> Update</a>
+
+
+
+{% endblock content %}
